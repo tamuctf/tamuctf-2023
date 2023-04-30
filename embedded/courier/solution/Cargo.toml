@@ -1,0 +1,13 @@
+[workspace]
+# exclude
+
+[package]
+name = "solution"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+courier-proto = { path = "../courier-proto", features = ["stamps", "std"] }
+postcard = { version = "1.0", features = ["alloc"] }

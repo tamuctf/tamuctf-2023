@@ -1,0 +1,3 @@
+[submodule "rev/flag-encryptor/tiny-AES-c"]
+	path = rev/flag-encryptor/tiny-AES-c
+	url = https://github.com/kokke/tiny-AES-c.git

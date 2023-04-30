@@ -1,0 +1,9 @@
+[workspace]
+members = [
+    "consignee",
+    "courier",
+    "courier-proto",
+    "lm3s6965-uart",
+    "sender",
+    "stamper",
+]

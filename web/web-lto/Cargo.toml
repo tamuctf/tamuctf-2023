@@ -1,0 +1,2 @@
+[workspace]
+members = ["flag-uploader", "web-lto"]

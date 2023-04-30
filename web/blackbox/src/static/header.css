@@ -1,0 +1,52 @@
+html {
+  background-color: #202A44;
+  color: white;
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  color: white;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  background: rgb(21,32,43);
+  z-index: 1200;
+  height: 60px;
+  padding: 0;
+}
+
+.header-content {
+  max-width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.site-title, .site-title:visited {
+  text-decoration: none;
+  color: white;
+  font-size: 26px;
+  font-weight: 300;
+  line-height: 54px;
+  letter-spacing: -1px;
+  margin-bottom: 0;
+  float: left;
+}
+
+.page-link {
+  text-decoration: none;
+  color: white;
+  font-size: 26px;
+  font-weight: 300;
+  line-height: 54px;
+  letter-spacing: -1px;
+  margin-bottom: 0;
+  float: right;
+}
+

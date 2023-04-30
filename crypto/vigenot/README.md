@@ -1,0 +1,17 @@
+# Vigenot
+
+Author: `_mac_`
+
+I've been staring at this so long my brain hertz. Here's the ciphertext if ya want to take a crack at it.
+`hmtonazyvdgipzqzoffvayfubnmwcjprqipslnlyonfdhndoofdjtahhmqhkgcsunoydiqmggkapmootkxwaullpzxkyxedsoagoknwfxeprnfqkdfsywdgdlcmjbjaumkwghumgbzdnnkqtlmiiojauujaprdtchsdpvasnanfcmzvptkxubgmxoaifgjdakyjmusawgjhvkrxghnorujdraunlcnnipwhrttoupovprcngdlmiiojfugstdpemtmodgerlwnogbljkgawprnofpkckaadagprfbnfrytkuypemihoygpebjfcpgruarzkifgxqmuajplvqzpvmpktjdgccuttgwrvtffwettfdcsztzlylyggdajvypkkqmegowuwoyzfhpdnoapmagnklgifnwganfwxepilmmchsypvhnagninbrwdxdgnduqmursbhhmawzehovfdgciagctgblcptkxrpcgmllggixnzpvfgvvrnfjolizvgsouuejhvkromhnoapxyfuiouhnkvpvffdgrzunorfqoiogslgdkryynudpemtmaggeplepjgwiatgawprnofpkdotcnfnkjmpoekrcngdlcmjbrfdpdgnmfzrsougprprnofpkxgvpynuupfgvvrnfjolavtyefnfwjopvvzeendlrqolrfupjrdiiarpryjmunkvpvffdgrekkktfqbrwgvvgaifgjdzotxgmjptpjhvkrxgphryppilfdvipjwurxyfuwvvganawjhlmmotfoalfrrfffnoyefrmpertzqmghrmmdjfpucqmuakyfkrmtcgqkjgyykrlwztkhdgipshkaypihoywmeqzppvpmoggnkonadnoenypbjnwtmvocmklghvprpxgphoeaeydtdyuqzhlgjdykalqmuwawmpokplapmxayxdhobvqmufdipsztlnlpoekrnkgdlxaxojauulokvvzeendlaaqtfflmwndpvasnanfcrfdlrkxgnlfbjvsprxyfugvxoaifgjdhobvqefmrtjhvkrxgpnozlyffaiqqghkvpvffdgrtgbllamhldiwutzjaujhvkrxgphridrhtaufhpoekrnngdllmrsouifsgdpemtmodglvxdlagwhsogihhzpatyefdpvasnanfcgreptkxjrtfgvvrnfjolsljeeonktaopvpaoendlyaiaoazmcnnmuvqtaunmxornfjolidemyefuejhvkrxgphrfpxyfuiowphvvpvffdgrzwhrrfuoiogslgyvrytkudpemtmodglidepjgwiawgprhrnofpkdotnknipjmpoekrnkogoymjbrfdpeoijuarsouymagaonzspakquaojwlnijjsdzmrjafl`
+
+Note, submit the flag in `gigem{flag}` format 
+
+## Solution
+We are given ciphertext and source code for the encryption algorithm. It appears to calculate an ciphertext character via xor with a key and rotates a key to expand its length by to k^2 where k is the original key length. 
+
+First problem is finding key length, which is done via index of coincidence calculations on the unrotated ciphertext. The unrotate to to align all the characters of the ciphertext that are encrypted with the same character of the key. This IoC calculation finds a key length of 13.
+
+Next problem is actually finding the key, which is done via frequency analysis and the X^{2} method, as described well [here](https://pages.mtu.edu/~shene/NSF-4/Tutorial/VIG/Vig-Recover.html). This gets us the key `rickrolledlol`, which successfully decrypts the ciphertext to find us the flag. Final solve script in `solve.py`.
+
+Flag: `gigem{frequencyanalysisiscool}`

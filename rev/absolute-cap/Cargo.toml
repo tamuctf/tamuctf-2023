@@ -1,0 +1,11 @@
+[workspace]
+members = [
+    "proto",
+    "server",
+    "friend",
+    "launcher",
+]
+
+[profile.release]
+debug = true
+codegen-units = 1

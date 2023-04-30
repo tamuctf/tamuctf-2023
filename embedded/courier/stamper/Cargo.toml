@@ -1,0 +1,19 @@
+[package]
+name = "stamper"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+debug = ["cortex-m-semihosting", "panic-semihosting"]
+
+[dependencies]
+cortex-m = { version = "0.7.6", features = ["critical-section-single-core"] }
+cortex-m-rtic = "1.1.3"
+cortex-m-semihosting = { version = "0.5.0", optional = true }
+courier-proto = { path = "../courier-proto", features = ["stamps"] }
+embedded-alloc = { git = "https://github.com/rust-embedded/embedded-alloc.git", rev = "89cb8d50e6634130302cd444b3f547aed0fd32dc" }
+lm3s6965 = { git = "https://github.com/japaric/lm3s6965.git", rev = "facf63aa0169c773175a143f6014a1d0977fb74f" }
+lm3s6965-uart = { path = "../lm3s6965-uart" }
+panic-semihosting = { version = "0.6.0", features = ["exit"], optional = true }

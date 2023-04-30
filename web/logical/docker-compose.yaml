@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  php-flask-server:
+    container_name: tamuctf-logical-flask
+    build: 
+      context: ./py
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+    volumes:
+      - ./py/src:/var/www
+    ports:
+      - 80:8000
+  db:
+    image: mysql:5.7
+    container_name: tamuctf-logical-mysql
+    build: ./sql
+    command: mysqld --user=root --verbose
+    restart: always
+    volumes:
+      - ./sql/database-setup.sql:/docker-entrypoint-initdb.d/setup.sql
+    environment:
+      MYSQL_DATABASE: "users"
+      MYSQL_ROOT_PASSWORD: "a0318d23705e6dd885eacc3f2f25eef4"
+      MYSQL_USER: "ro_user"
+      MYSQL_PASSWORD: "c207876a6365f76aa03ecff9746af6f6"
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    ports:
+      - "3306:3306"
+

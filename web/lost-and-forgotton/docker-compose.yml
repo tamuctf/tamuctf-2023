@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  php-apache-environment:
+    container_name: tamuctf-lost-and-forgotten-apache
+    build:
+      context: ./php
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+    volumes:
+      - ./php/src:/var/www/html/
+    ports:
+      - 8000:80
+  db:
+    image: mysql:5.7
+    container_name: tamuctf-lost-and-forgotten-mysql
+    build: ./sql
+    command: mysqld --user=root --verbose
+    restart: always
+    volumes:
+      - ./sql/database-setup.sql:/docker-entrypoint-initdb.d/setup.sql
+    environment:
+      MYSQL_DATABASE: "writeups"
+      MYSQL_ROOT_PASSWORD: "supersecurerootpasswordforadminsonly1992393!!!"
+      MYSQL_USER: "ro_user"
+      MYSQL_PASSWORD: "r0us3rp4SSw0Rd1123492482!2@#"
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    ports:
+      - "3306:3306"

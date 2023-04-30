@@ -1,0 +1,6 @@
+FROM mysql:5.7
+ENV MYSQL_DATABASE: "writeups"
+ENV MYSQL_USER: "ro_user"
+ENV MYSQL_PASSWORD: "r0us3rp4SSw0Rd1123492482!2@#"
+ENV MYSQL_ROOT_PASSWORD: "supersecurerootpasswordforadminsonly1992393!!!"
+ENV MYSQL_ALLOW_EMPTY_PASSWORD: "yes"

@@ -1,0 +1,2 @@
+[target.thumbv7m-none-eabi]
+runner = "qemu-system-arm -cpu cortex-m3 -machine lm3s6965evb -nographic -semihosting-config enable=on,target=native -serial tcp:127.0.0.1:31337,server,nodelay -kernel"

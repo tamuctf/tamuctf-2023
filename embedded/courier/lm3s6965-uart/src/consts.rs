@@ -1,0 +1,44 @@
+pub const UARTDR_MASK: u32 = 0x0fff;
+pub const UARTDR_OE: u32 = 0b100000000000;
+pub const UARTDR_BE: u32 = 0b010000000000;
+pub const UARTDR_PE: u32 = 0b001000000000;
+pub const UARTDR_FE: u32 = 0b000100000000;
+pub const UARTDR_ERR: u32 = 0x0f00;
+pub const UARTDR_DATA: u32 = 0x00ff;
+
+pub const UARTRSR_MASK: u32 = 0b1111;
+pub const UARTRSR_OE: u32 = 0b1000;
+pub const UARTRSR_BE: u32 = 0b0100;
+pub const UARTRSR_PE: u32 = 0b0010;
+pub const UARTRSR_FE: u32 = 0b0001;
+pub const UARTRSR_ERR: u32 = UARTRSR_MASK;
+
+pub const UARTFR_MASK: u32 = 0b11111000;
+pub const UARTFR_TXFE: u32 = 0b10000000;
+pub const UARTFR_RXFF: u32 = 0b01000000;
+pub const UARTFR_TXFF: u32 = 0b00100000;
+pub const UARTFR_RXFE: u32 = 0b00010000;
+pub const UARTFR_BUSY: u32 = 0b00001000;
+
+pub const UARTCTL_MASK: u32 = 0b1110000111;
+pub const UARTCTL_RXE: u32 = 0b1000000000;
+pub const UARTCTL_TXE: u32 = 0b0100000000;
+pub const UARTCTL_LBE: u32 = 0b0010000000;
+pub const UARTCTL_SIRLP: u32 = 0b0000000100;
+pub const UARTCTL_SIREN: u32 = 0b0000000010;
+pub const UARTCTL_UARTEN: u32 = 0b0000000001;
+
+pub const UARTIBRD_MASK: u32 = 0xffff;
+pub const UARTFBRD_MASK: u32 = 0b111111;
+
+pub const UARTLCRH_MASK: u32 = 0b11111111;
+pub const UARTLCRH_FEN: u32 = 0b00010000;
+
+pub const UARTIM_MASK: u32 = 0b11111110000;
+pub const UARTIM_OEIM: u32 = 0b10000000000;
+pub const UARTIM_BEIM: u32 = 0b01000000000;
+pub const UARTIM_PEIM: u32 = 0b00100000000;
+pub const UARTIM_FEIM: u32 = 0b00010000000;
+pub const UARTIM_RTIM: u32 = 0b00001000000;
+pub const UARTIM_TXIM: u32 = 0b00000100000;
+pub const UARTIM_RXIM: u32 = 0b00000010000;
